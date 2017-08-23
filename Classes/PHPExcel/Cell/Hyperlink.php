@@ -115,7 +115,7 @@ class PHPExcel_Cell_Hyperlink
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->url .
             $this->tooltip .
             __CLASS__

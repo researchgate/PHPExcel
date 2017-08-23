@@ -195,7 +195,7 @@ class PHPExcel_Style_Protection extends PHPExcel_Style_Supervisor implements PHP
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getHashCode();
         }
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->locked .
             $this->hidden .
             __CLASS__

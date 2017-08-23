@@ -475,7 +475,7 @@ class PHPExcel_Worksheet_BaseDrawing implements PHPExcel_IComparable
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->name .
             $this->description .
             $this->worksheet->getHashCode() .

@@ -527,7 +527,7 @@ class PHPExcel_Style_Font extends PHPExcel_Style_Supervisor implements PHPExcel_
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getHashCode();
         }
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->name .
             $this->size .
             ($this->bold ? 't' : 'f') .

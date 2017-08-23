@@ -435,7 +435,7 @@ class PHPExcel_Style_Color extends PHPExcel_Style_Supervisor implements PHPExcel
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getHashCode();
         }
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->argb .
             __CLASS__
         );

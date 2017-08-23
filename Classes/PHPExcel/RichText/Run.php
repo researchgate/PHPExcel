@@ -74,7 +74,7 @@ class PHPExcel_RichText_Run extends PHPExcel_RichText_TextElement implements PHP
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->getText() .
             $this->font->getHashCode() .
             __CLASS__

@@ -123,7 +123,7 @@ class PHPExcel_Worksheet_Drawing extends PHPExcel_Worksheet_BaseDrawing implemen
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->path .
             parent::getHashCode() .
             __CLASS__

@@ -297,7 +297,7 @@ class PHPExcel_Comment implements PHPExcel_IComparable
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->author .
             $this->text->getHashCode() .
             $this->width .

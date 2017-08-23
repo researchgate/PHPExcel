@@ -2645,7 +2645,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
     public function getHashCode()
     {
         if ($this->dirty) {
-            $this->hash = hash('md5', $this->title . $this->autoFilter . ($this->protection->isProtectionEnabled() ? 't' : 'f') . __CLASS__);
+            $this->hash = PHPExcel_Hash::calculate($this->title . $this->autoFilter . ($this->protection->isProtectionEnabled() ? 't' : 'f') . __CLASS__);
             $this->dirty = false;
         }
         return $this->hash;

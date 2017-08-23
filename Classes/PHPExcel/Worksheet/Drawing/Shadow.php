@@ -267,7 +267,7 @@ class PHPExcel_Worksheet_Drawing_Shadow implements PHPExcel_IComparable
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             ($this->visible ? 't' : 'f') .
             $this->blurRadius .
             $this->distance .

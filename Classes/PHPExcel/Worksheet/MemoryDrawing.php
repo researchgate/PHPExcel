@@ -175,7 +175,7 @@ class PHPExcel_Worksheet_MemoryDrawing extends PHPExcel_Worksheet_BaseDrawing im
      */
     public function getHashCode()
     {
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->renderingFunction .
             $this->mimeType .
             $this->uniqueName .

@@ -375,7 +375,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
         if ($this->isSupervisor) {
             return $this->getSharedComponent()->getHashCode();
         }
-        return hash('md5',
+        return PHPExcel_Hash::calculate(
             $this->formatCode .
             $this->builtInFormatCode .
             __CLASS__
