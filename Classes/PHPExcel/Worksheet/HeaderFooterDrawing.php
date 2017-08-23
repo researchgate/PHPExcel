@@ -333,7 +333,7 @@ class PHPExcel_Worksheet_HeaderFooterDrawing extends PHPExcel_Worksheet_Drawing 
      */
     public function getHashCode()
     {
-        return md5(
+        return hash('md5',
             $this->path .
             $this->name .
             $this->offsetX .

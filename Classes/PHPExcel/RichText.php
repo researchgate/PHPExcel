@@ -168,7 +168,7 @@ class PHPExcel_RichText implements PHPExcel_IComparable
             $hashElements .= $element->getHashCode();
         }
 
-        return md5(
+        return hash('md5',
             $hashElements .
             __CLASS__
         );
