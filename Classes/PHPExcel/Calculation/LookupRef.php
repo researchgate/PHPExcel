@@ -374,16 +374,18 @@ class PHPExcel_Calculation_LookupRef
      */
     public static function OFFSET($cellAddress = null, $rows = 0, $columns = 0, $height = null, $width = null)
     {
-        $rows    = PHPExcel_Calculation_Functions::flattenSingleValue($rows);
-        $columns = PHPExcel_Calculation_Functions::flattenSingleValue($columns);
-        $height  = PHPExcel_Calculation_Functions::flattenSingleValue($height);
-        $width   = PHPExcel_Calculation_Functions::flattenSingleValue($width);
         if ($cellAddress == null) {
             return 0;
         }
 
         $args = func_get_args();
         $pCell = array_pop($args);
+
+        $rows    = PHPExcel_Calculation_Functions::flattenSingleValue($rows);
+        $columns = PHPExcel_Calculation_Functions::flattenSingleValue($columns);
+        $height  = PHPExcel_Calculation_Functions::flattenSingleValue($height);
+        $width   = PHPExcel_Calculation_Functions::flattenSingleValue($width);
+
         if (!is_object($pCell)) {
             return PHPExcel_Calculation_Functions::REF();
         }
